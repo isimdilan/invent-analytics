@@ -1,4 +1,3 @@
-// controllers/borrowController.js
 const Borrow = require('../models/borrow');
 const Book = require('../models/book');
 const User = require('../models/user');

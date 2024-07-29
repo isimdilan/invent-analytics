@@ -4,6 +4,6 @@ const borrowController = require('../controllers/borrowController');
 
 router.get('/', borrowController.getBorrows);
 router.post('/', borrowController.createBorrow);router.get('/:id', borrowController.getBorrow);
-router.delete('/:id', borrowController.returnBorrow); // Ödünç alma kaydını silmek için DELETE kullanabilirsiniz.
+router.delete('/:id', borrowController.returnBorrow);
 
 module.exports = router;
