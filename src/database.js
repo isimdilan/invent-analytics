@@ -1,11 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('library', 'root', '122503.Ahmet', {
+const sequelize = new Sequelize('library', 'root', '1234', {
     host: 'localhost',
-    dialect: 'mysql',
-    dialectOptions: {
-        connectTimeout: 60000 // Bağlantı zaman aşımı süresi (ms)
-    }
+    dialect: 'mysql'
 });
 
 const User = sequelize.define('User', {
@@ -49,10 +46,10 @@ Borrow.belongsTo(Book, { foreignKey: 'bookId' });
 (async () => {
     try {
         await sequelize.authenticate();
-        console.log("Basarili");
+        console.log("Connection successful");
         await sequelize.sync();
     } catch (error) {
-        console.error('Başarısız', error);
+        console.error('Connection failed', error);
     }
 })();
 
